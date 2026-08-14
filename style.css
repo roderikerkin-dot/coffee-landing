@@ -83,7 +83,7 @@ a:hover {
     display: block;
     width: 26px;
     height: 3px;
-    background-color: #4a2c14;   /* тёмно-коричневый под стиль кофейни */
+    background-color: #4a2c14; /* тёмно-коричневый под стиль кофейни */
     border-radius: 2px;
 }
 /* ===== HERO ===== */
@@ -252,8 +252,8 @@ a:hover {
 .contact-form {
     grid-column: 1 / -1;
     width: 100%;
-    max-width: 600px;        /* форма уже не на всю ширину */
-    margin-inline: auto;     /* центрируем */
+    max-width: 600px;  /* форма уже не на всю ширину */
+    margin-inline: auto;  /* центрируем */
 }
 
 .form-group {
@@ -277,8 +277,8 @@ a:hover {
     font-family: inherit;
 }
 .form-group textarea {
-    resize: none;        /* ❌ убираем уголок для ручного растягивания */
-    min-height: 56px;    /* стартовая высота — маленькая */
+    resize: none;     /* убираем уголок для ручного растягивания */
+    min-height: 56px; /* стартовая высота — маленькая */
 }
 .form-group input:focus,
 .form-group textarea:focus {
