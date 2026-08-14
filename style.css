@@ -67,7 +67,25 @@ a:hover {
 .nav a:hover {
     color: #c57d3b;
 }
+/* ===== Кнопка-бургер ===== */
 
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.burger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #4a2c14;   /* тёмно-коричневый под стиль кофейни */
+    border-radius: 2px;
+}
 /* ===== HERO ===== */
 
 .hero {
@@ -231,12 +249,53 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
+.contact-form {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 600px;        /* форма уже не на всю ширину */
+    margin-inline: auto;     /* центрируем */
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #4a2c14;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5d9c3;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+.form-group textarea {
+    resize: none;        /* ❌ убираем уголок для ручного растягивания */
+    min-height: 56px;    /* стартовая высота — маленькая */
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c88550;
+    box-shadow: 0 0 0 3px rgba(200, 133, 80, 0.1);
+}
+
+.contact-form .button {
+    width: 100%;
+    margin-top: 8px;
+}
 /* ===== АДАПТИВНОСТЬ ===== */
 
 @media (max-width: 700px) {
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        .header-inner {
+        flex-wrap: wrap;
     }
 
     .hero {
@@ -257,5 +316,20 @@ a:hover {
 
     .section-title {
         font-size: 28px;
+    }
+        .burger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-top: 12px;
+    }
+
+    .nav.open {
+        display: flex;
     }
 }
