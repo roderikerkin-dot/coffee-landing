@@ -1,3 +1,7 @@
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,7 +33,13 @@ a:hover {
     margin-inline: auto;
 }
 
-/* ===== ШАПКА ===== */
+[hidden] {
+    display: none !important;
+}
+
+/* ============================================
+   ШАПКА И БУРГЕР
+   ============================================ */
 
 .header {
     position: sticky;
@@ -67,7 +77,6 @@ a:hover {
 .nav a:hover {
     color: #c57d3b;
 }
-/* ===== Кнопка-бургер ===== */
 
 .burger {
     display: none;
@@ -83,10 +92,13 @@ a:hover {
     display: block;
     width: 26px;
     height: 3px;
-    background-color: #4a2c14; /* тёмно-коричневый под стиль кофейни */
+    background-color: #4a2c14;
     border-radius: 2px;
 }
-/* ===== HERO ===== */
+
+/* ============================================
+   HERO
+   ============================================ */
 
 .hero {
     padding: 120px 0;
@@ -109,6 +121,10 @@ a:hover {
     opacity: 0.95;
 }
 
+/* ============================================
+   КНОПКИ
+   ============================================ */
+
 .button {
     display: inline-block;
     padding: 14px 24px;
@@ -118,6 +134,9 @@ a:hover {
     font-weight: bold;
     margin-right: 10px;
     margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.2s;
 }
 
@@ -136,7 +155,9 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* ===== СЕКЦИИ ===== */
+/* ============================================
+   СЕКЦИИ
+   ============================================ */
 
 .section {
     padding: 80px 0;
@@ -148,6 +169,79 @@ a:hover {
     color: #633a18;
 }
 
+.section-alt {
+    background-color: #f0e9dc;
+}
+/* ===== ВКЛАДКИ МЕНЮ ===== */
+
+.menu-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #e5d9c3;
+    background-color: white;
+    color: #4a2c14;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+
+.tab:hover {
+    background-color: #f0e9dc;
+}
+
+.tab.active {
+    background-color: #c88550;
+    color: white;
+    border-color: #c88550;
+}
+
+/* Скрытие неактивных карточек меню */
+.cards .menu-item {
+    display: none;
+}
+
+/* Описание анимации: старт — прозрачная и чуть ниже, финиш — обычная */
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cards .menu-item.visible {
+    display: flex;
+    animation: cardIn 0.4s ease both;
+}
+
+/* На мобильном вкладки скроллятся горизонтально */
+@media (max-width: 600px) {
+    .menu-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scrollbar-width: none;          /* Firefox */
+    }
+
+    .menu-tabs::-webkit-scrollbar {
+        display: none;                   /* Chrome, Safari */
+    }
+
+    .tab {
+        flex-shrink: 0;
+    }
+}
 .about-text {
     max-width: 800px;
     font-size: 18px;
@@ -157,22 +251,9 @@ a:hover {
     margin-bottom: 16px;
 }
 
-/* ===== ПОДВАЛ ===== */
-
-.footer {
-    padding: 30px 0;
-    text-align: center;
-    color: #a98b67;
-    background-color: #f0e9dc;
-    border-top: 1px solid #e5d9dc;
-}
-/* ===== ЧЕРЕДОВАНИЕ ФОНА СЕКЦИЙ ===== */
-
-.section-alt {
-    background-color: #f0e9dc;
-}
-
-/* ===== КАРТОЧКИ МЕНЮ ===== */
+/* ============================================
+   КАРТОЧКИ И МЕНЮ
+   ============================================ */
 
 .cards {
     display: grid;
@@ -221,7 +302,9 @@ a:hover {
     font-weight: bold;
 }
 
-/* ===== ГАЛЕРЕЯ ===== */
+/* ============================================
+   ГАЛЕРЕЯ
+   ============================================ */
 
 .gallery {
     display: grid;
@@ -242,19 +325,43 @@ a:hover {
     transform: scale(1.03);
 }
 
-/* ===== КОНТАКТЫ ===== */
+/* ============================================
+   КОНТАКТЫ: ФОРМА + КАРТА
+   ============================================ */
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 .contact-form {
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 600px;  /* форма уже не на всю ширину */
-    margin-inline: auto;  /* центрируем */
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
+
+.contact-map {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.map-wrap {
+    margin-top: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5d9c3;
+}
+
+.map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* ============================================
+   ФОРМА
+   ============================================ */
 
 .form-group {
     margin-bottom: 16px;
@@ -276,10 +383,12 @@ a:hover {
     font-size: 16px;
     font-family: inherit;
 }
+
 .form-group textarea {
-    resize: none;     /* убираем уголок для ручного растягивания */
-    min-height: 56px; /* стартовая высота — маленькая */
+    resize: none;
+    min-height: 56px;
 }
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -291,11 +400,10 @@ a:hover {
     width: 100%;
     margin-top: 8px;
 }
-/* ===== Блок "Спасибо" ===== */
 
-[hidden] {
-    display: none !important;
-}
+/* ============================================
+   БЛОК "СПАСИБО" И ЧЕКБОКС
+   ============================================ */
 
 .form-success {
     text-align: center;
@@ -315,7 +423,6 @@ a:hover {
 .form-success p {
     color: #6b5b45;
 }
-/* ===== Чекбокс согласия ===== */
 
 .checkbox-group {
     display: flex;
@@ -338,17 +445,121 @@ a:hover {
     margin: 0;
     flex-shrink: 0;
     cursor: pointer;
-    accent-color: #c88550;   /* цвет галочки под стиль кофейни */
+    accent-color: #c88550;
 }
 
 .checkbox-label a {
     color: #b47438;
     text-decoration: underline;
 }
-/* ===== АДАПТИВНОСТЬ ===== */
+
+/* ============================================
+   СТАТУС "ОТКРЫТО / ЗАКРЫТО"
+   ============================================ */
+
+.status-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status-open {
+    background-color: #e6f6e9;
+    color: #1d7a34;
+}
+
+.status-closed {
+    background-color: #fdeaea;
+    color: #b3352c;
+}
+
+/* ============================================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+   ============================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   КНОПКА "НАВЕРХ"
+   ============================================ */
+
+.to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: #c88550;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 20;
+}
+
+.to-top:hover {
+    background-color: #a56a3a;
+}
+
+.to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   ПОДВАЛ
+   ============================================ */
+
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #a98b67;
+    background-color: #f0e9dc;
+    border-top: 1px solid #e5d9dc;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form,
+    .contact-map {
+        grid-column: 1 / -1;
+    }
+
+    .contact-form {
+        grid-row: 1;
+    }
+
+    .contact-map {
+        grid-row: 2;
+    }
+}
 
 @media (max-width: 700px) {
-        .header-inner {
+    .header-inner {
         flex-wrap: wrap;
     }
 
@@ -371,7 +582,8 @@ a:hover {
     .section-title {
         font-size: 28px;
     }
-        .burger {
+
+    .burger {
         display: flex;
     }
 

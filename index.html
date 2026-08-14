@@ -9,25 +9,26 @@
 <body>
 
     <header class="header">
-    <div class="container header-inner">
-        <a href="#" class="logo">☕ Bean & Brew</a>
+        <div class="container header-inner">
+            <a href="#" class="logo">☕ Bean & Brew</a>
 
-        <button class="burger" id="burgerBtn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <nav class="nav" id="navMenu">
-            <a href="#about">О нас</a>
-            <a href="#menu">Меню</a>
-            <a href="#gallery">Галерея</a>
-            <a href="#contact">Контакты</a>
-        </nav>
-    </div>
-</header>
+            <nav class="nav" id="navMenu">
+                <a href="#about">О нас</a>
+                <a href="#menu">Меню</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
-    <section class="hero">
+        <section class="hero">
             <div class="container">
                 <h1>Кофе, который будит вдохновение</h1>
                 <p>
@@ -56,123 +57,232 @@
                 </div>
             </div>
         </section>
+
         <section id="menu" class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Наше меню</h2>
+    <div class="container">
+        <h2 class="section-title">Наше меню</h2>
 
-                <div class="cards">
-                    <article class="card">
-                        <div class="card-emoji">☕</div>
-                        <h3>Эспрессо</h3>
-                        <p>Классика жанра. Плотный, крепкий, с ореховыми нотками.</p>
-                        <span class="price">150 ₽</span>
-                    </article>
+        <div class="menu-tabs">
+            <button class="tab active" data-category="coffee">☕ Кофе</button>
+            <button class="tab" data-category="tea">🍵 Чай</button>
+            <button class="tab" data-category="desserts">🍰 Десерты</button>
+            <button class="tab" data-category="pastry">🥐 Выпечка</button>
+            <button class="tab" data-category="drinks">🥤 Газировка</button>
+            <button class="tab" data-category="icecream">🍦 Мороженое</button>
+        </div>
 
-                    <article class="card">
-                        <div class="card-emoji">🥛</div>
-                        <h3>Капучино</h3>
-                        <p>Идеальный баланс эспрессо и нежной молочной пены.</p>
-                        <span class="price">250 ₽</span>
-                    </article>
+        <div class="cards menu-cards">
+            <!-- ===== КОФЕ ===== -->
+            <article class="card menu-item" data-category="coffee">
+                <div class="card-emoji">☕</div>
+                <h3>Эспрессо</h3>
+                <p>Классика жанра. Плотный, крепкий, с ореховыми нотками.</p>
+                <span class="price">150 ₽</span>
+            </article>
 
-                    <article class="card">
-                        <div class="card-emoji">🍫</div>
-                        <h3>Раф</h3>
-                        <p>Сливочный, мягкий, с ванилью. Любимец гостей.</p>
-                        <span class="price">300 ₽</span>
-                    </article>
+            <article class="card menu-item" data-category="coffee">
+                <div class="card-emoji">🥛</div>
+                <h3>Капучино</h3>
+                <p>Идеальный баланс эспрессо и нежной молочной пены.</p>
+                <span class="price">250 ₽</span>
+            </article>
 
-                    <article class="card">
-                        <div class="card-emoji">🧊</div>
-                        <h3>Айс-латте</h3>
-                        <p>Освежающий холодный латте со льдом.</p>
-                        <span class="price">280 ₽</span>
-                    </article>
+            <article class="card menu-item" data-category="coffee">
+                <div class="card-emoji">🍫</div>
+                <h3>Раф</h3>
+                <p>Сливочный, мягкий, с ванилью. Любимец гостей.</p>
+                <span class="price">300 ₽</span>
+            </article>
 
-                    <article class="card">
-                        <div class="card-emoji">🥐</div>
-                        <h3>Круассан</h3>
-                        <p>Свежая выпечка каждое утро. Миндаль или шоколад.</p>
-                        <span class="price">220 ₽</span>
-                    </article>
+            <article class="card menu-item" data-category="coffee">
+                <div class="card-emoji">🧊</div>
+                <h3>Айс-латте</h3>
+                <p>Освежающий холодный латте со льдом.</p>
+                <span class="price">280 ₽</span>
+            </article>
 
-                    <article class="card">
-                        <div class="card-emoji">🍰</div>
-                        <h3>Чизкейк</h3>
-                        <p>Нежный нью-йоркский чизкейк собственного приготовления.</p>
-                        <span class="price">350 ₽</span>
-                    </article>
-                </div>
-            </div>
-        </section>
+            <!-- ===== ЧАЙ ===== -->
+            <article class="card menu-item" data-category="tea">
+                <div class="card-emoji">🍵</div>
+                <h3>Чёрный чай</h3>
+                <p>Крепкий ассам с bergamot. Подаётся в чайнике 400 мл.</p>
+                <span class="price">180 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="tea">
+                <div class="card-emoji">🌿</div>
+                <h3>Зелёный с жасмином</h3>
+                <p>Лёгкий и ароматный, освежает в любое время дня.</p>
+                <span class="price">200 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="tea">
+                <div class="card-emoji">🍊</div>
+                <h3>Облепиховый</h3>
+                <p>Авторский напиток с облепихой, мёдом и имбирём.</p>
+                <span class="price">280 ₽</span>
+            </article>
+
+            <!-- ===== ДЕСЕРТЫ ===== -->
+            <article class="card menu-item" data-category="desserts">
+                <div class="card-emoji">🍰</div>
+                <h3>Чизкейк</h3>
+                <p>Нежный нью-йоркский чизкейк собственного приготовления.</p>
+                <span class="price">350 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="desserts">
+                <div class="card-emoji">🍮</div>
+                <h3>Тирамису</h3>
+                <p>Классический итальянский десерт с маскарпоне и кофе.</p>
+                <span class="price">380 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="desserts">
+                <div class="card-emoji">🍯</div>
+                <h3>Медовик</h3>
+                <p>Домашний торт с нежным сметанным кремом.</p>
+                <span class="price">320 ₽</span>
+            </article>
+
+            <!-- ===== ВЫПЕЧКА ===== -->
+            <article class="card menu-item" data-category="pastry">
+                <div class="card-emoji">🥐</div>
+                <h3>Круассан</h3>
+                <p>Свежая выпечка каждое утро. Миндаль или шоколад.</p>
+                <span class="price">220 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="pastry">
+                <div class="card-emoji">🥨</div>
+                <h3>Синнабон</h3>
+                <p>Булочка с корицей и сливочной глазурью.</p>
+                <span class="price">280 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="pastry">
+                <div class="card-emoji">🥧</div>
+                <h3>Киш с курицей</h3>
+                <p>Открытый пирог с курицей и грибами. Сытный и вкусный.</p>
+                <span class="price">340 ₽</span>
+            </article>
+
+            <!-- ===== ГАЗИРОВКА ===== -->
+            <article class="card menu-item" data-category="drinks">
+                <div class="card-emoji">🥤</div>
+                <h3>Домашний лимонад</h3>
+                <p>Лимон, мята и газированная вода. Три вкуса на выбор.</p>
+                <span class="price">220 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="drinks">
+                <div class="card-emoji">🫧</div>
+                <h3>Кола / Фанта</h3>
+                <p>Классические газированные напитки, 0.33 л.</p>
+                <span class="price">150 ₽</span>
+            </article>
+
+            <!-- ===== МОРОЖЕНОЕ ===== -->
+            <article class="card menu-item" data-category="icecream">
+                <div class="card-emoji">🍦</div>
+                <h3>Ванильный пломбир</h3>
+                <p>Настоящий пломбир по ГОСТ. Шарик 80 г.</p>
+                <span class="price">180 ₽</span>
+            </article>
+
+            <article class="card menu-item" data-category="icecream">
+                <div class="card-emoji">🍨</div>
+                <h3>Шоколадное</h3>
+                <p>Тёмный бельгийский шоколад. Шарик 80 г.</p>
+                <span class="price">200 ₽</span>
+            </article>
+        </div>
+    </div>
+</section>
 
         <section id="gallery" class="section">
             <div class="container">
                 <h2 class="section-title">Атмосфера</h2>
 
                 <div class="gallery">
-    <img src="images/coffee1.jpg" alt="Интерьер кофейни">
-    <img src="images/coffee2.jpg" alt="Чашка кофе">
-    <img src="images/coffee3.jpg" alt="Гости кофейни">
-    <img src="images/coffee4.jpg" alt="Бариста готовит кофе">
-    <img src="images/coffee5.jpg" alt="Кофе и десерт">
-    <img src="images/coffee6.jpg" alt="Столик у окна">
-</div>
+                    <img src="images/coffee1.jpg" alt="Интерьер кофейни">
+                    <img src="images/coffee2.jpg" alt="Чашка кофе">
+                    <img src="images/coffee3.jpg" alt="Гости кофейни">
+                    <img src="images/coffee4.jpg" alt="Бариста готовит кофе">
+                    <img src="images/coffee5.jpg" alt="Кофе и десерт">
+                    <img src="images/coffee6.jpg" alt="Столик у окна">
+                </div>
             </div>
         </section>
+
         <section id="contact" class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Как нас найти</h2>
 
                 <div class="contact-grid">
-                                    <div class="card contact-form">
-                    <h3>✉️ Напишите нам</h3>
-                    <form action="https://formspree.io/f/mkjwzpnz" method="POST" id="contactForm">
-    <div class="form-group">
-        <label for="name">Ваше имя</label>
-        <input type="text" id="name" name="name" required>
-    </div>
+                    <div class="card contact-form">
+                        <h3>✉️ Напишите нам</h3>
+                        <form action="https://formspree.io/f/mkjwzpnz" method="POST" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
 
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
 
-    <div class="form-group">
-        <label for="phone">Телефон</label>
-        <input 
-    type="tel" 
-    id="phone" 
-    name="phone" 
-    placeholder="+7 (___) ___-__-__"
-    maxlength="18"
-    required
->
-    </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    placeholder="+7 (___) ___-__-__"
+                                    maxlength="18"
+                                    required
+                                >
+                            </div>
 
-    <div class="form-group">
-        <label for="message">Сообщение</label>
-        <textarea id="message" name="message" rows="2" required></textarea>
-    </div>
-    <div class="form-group checkbox-group">
-        <label class="checkbox-label">
-            <input type="checkbox" name="agree" required>
-            <span>
-                Я согласен на 
-                <a href="#" onclick="alert('Здесь будет политика конфиденциальности'); return false;">
-                    обработку персональных данных
-                </a>
-            </span>
-        </label>
-    </div>
-    <button type="submit" class="button">Отправить</button>
-</form>
-                    <div class="form-success" id="formSuccess" hidden>
-                        <div class="success-emoji">🎉</div>
-                        <h3>Спасибо! Ваша заявка отправлена</h3>
-                        <p>Мы получили ваше сообщение и скоро свяжемся с вами.</p>
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" name="message" rows="2" required></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="agree" required>
+                                    <span>
+                                        Я согласен на 
+                                        <a href="#" onclick="alert('Здесь будет политика конфиденциальности'); return false;">
+                                            обработку персональных данных
+                                        </a>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="button">Отправить</button>
+                        </form>
+
+                        <div class="form-success" id="formSuccess" hidden>
+                            <div class="success-emoji">🎉</div>
+                            <h3>Спасибо! Ваша заявка отправлена</h3>
+                            <p>Мы получили ваше сообщение и скоро свяжемся с вами.</p>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="card contact-map">
+                        <h3>📍 Мы на карте</h3>
+                        <div class="map-wrap">
+                            <iframe 
+                                src="https://yandex.ru/map-widget/v1/?text=Москва, улица Кофейная, 12&z=16" 
+                                title="Как нас найти"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <h3>📍 Адрес</h3>
                         <p>г. Москва, ул. Кофейная, 12</p>
@@ -181,6 +291,7 @@
                     <div class="card">
                         <h3>🕐 Часы работы</h3>
                         <p>Ежедневно с 8:00 до 22:00</p>
+                        <span class="status-badge" id="openStatus"></span>
                     </div>
 
                     <div class="card">
@@ -190,12 +301,15 @@
                 </div>
             </div>
         </section>
-        </main>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <p>© 2026 Bean & Brew. Все права защищены.</p>
         </div>
     </footer>
+
+    <button class="to-top" id="toTopBtn" aria-label="Наверх">↑</button>
     <script src="script.js"></script>
 </body>
 </html>
