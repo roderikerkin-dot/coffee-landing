@@ -51,3 +51,55 @@ contactForm.addEventListener('submit', function (event) {
         alert('Ошибка сети. Проверьте интернет и попробуйте ещё раз.');
     });
 });
+// ===== Маска для телефона =====
+
+const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', function (e) {
+    // Убираем всё, кроме цифр
+    let digits = this.value.replace(/\D/g, '');
+    
+    // Если начинается с 8 — заменяем на 7
+    if (digits.startsWith('8')) {
+        digits = '7' + digits.slice(1);
+    }
+    
+    // Если не начинается с 7 — добавляем
+    if (!digits.startsWith('7') && digits.length > 0) {
+        digits = '7' + digits;
+    }
+    
+    // Ограничиваем 11 цифрами (7 + 10 цифр номера)
+    digits = digits.slice(0, 11);
+    
+    // Форматируем
+    let formatted = '+7';
+    if (digits.length > 1) {
+        formatted += ' (' + digits.slice(1, 4);
+    }
+    if (digits.length >= 5) {
+        formatted += ') ' + digits.slice(4, 7);
+    }
+    if (digits.length >= 8) {
+        formatted += '-' + digits.slice(7, 9);
+    }
+    if (digits.length >= 10) {
+        formatted += '-' + digits.slice(9, 11);
+    }
+    
+    this.value = formatted;
+});
+
+// При фокусе — если поле пустое, ставим "+7 ("
+phoneInput.addEventListener('focus', function () {
+    if (this.value === '') {
+        this.value = '+7 (';
+    }
+});
+
+// При потере фокуса — если ничего не введено, очищаем
+phoneInput.addEventListener('blur', function () {
+    if (this.value === '+7 (' || this.value === '+7') {
+        this.value = '';
+    }
+});
