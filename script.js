@@ -113,9 +113,9 @@ if (isOpen) {
     openStatus.classList.add('status-closed');
 }
 
-// ===== Анимация появления при скролле =====
+// ===== Анимация появления при скролле (постоянная) =====
 
-const revealTargets = document.querySelectorAll('.section-title, .card:not(.menu-item)');
+const revealTargets = document.querySelectorAll('.card, .section-title');
 
 revealTargets.forEach(function (el) {
     el.classList.add('reveal');
@@ -124,8 +124,9 @@ revealTargets.forEach(function (el) {
 const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('visible');    // вошёл в экран — показываем
+        } else {
+            entry.target.classList.remove('visible'); // ушёл с экрана — прячем
         }
     });
 }, { threshold: 0.15 });
