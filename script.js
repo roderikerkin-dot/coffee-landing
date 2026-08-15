@@ -115,7 +115,7 @@ if (isOpen) {
 
 // ===== Анимация появления при скролле (постоянная) =====
 
-const revealTargets = document.querySelectorAll('.card, .section-title');
+const revealTargets = document.querySelectorAll('.card:not(.menu-item), .section-title');
 
 revealTargets.forEach(function (el) {
     el.classList.add('reveal');
@@ -124,12 +124,12 @@ revealTargets.forEach(function (el) {
 const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');    // вошёл в экран — показываем
+            entry.target.classList.add('visible');     // вошёл в экран — показываем
         } else {
-            entry.target.classList.remove('visible'); // ушёл с экрана — прячем
+            entry.target.classList.remove('visible');  // ушёл с экрана — прячем
         }
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.1 });
 
 revealTargets.forEach(function (el) {
     observer.observe(el);
