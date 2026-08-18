@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div class="preloader" id="preloader">
+        <div class="cup-loader">
+            <div class="cup-steam"><span></span><span></span><span></span></div>
+            <div class="cup-body">
+                <div class="cup-fill" id="cupFill"></div>
+            </div>
+            <div class="cup-handle"></div>
+        </div>
+        <p class="cup-label">Завариваем… <span id="preloaderCount">0%</span></p>
+    </div>
     <header class="header">
         <div class="container header-inner">
             <a href="#" class="logo">☕ Bean & Brew</a>
@@ -29,8 +38,14 @@
 
     <main>
         <section class="hero">
+                        <div class="hero-cup" aria-hidden="true">
+                <span class="steam s1"></span>
+                <span class="steam s2"></span>
+                <span class="steam s3"></span>
+                <span class="cup">☕</span>
+            </div>
             <div class="container">
-                <h1>Кофе, который будит вдохновение</h1>
+                <h1>Кофе, который пробуждает вдохновение </h1>
                 <p>
                     Уютная кофейня в самом сердце города.
                     Свежая обжарка, авторские напитки и тёплая атмосфера.
@@ -199,7 +214,94 @@
         </div>
     </div>
 </section>
+        <section id="daily" class="section">
+            <div class="container">
+                <div class="daily-card">
+                    <div class="daily-emoji" id="dailyEmoji">☕</div>
+                    <div class="daily-info">
+                        <span class="daily-badge">Напиток дня</span>
+                        <h3 id="dailyName">Лавандовый раф</h3>
+                        <p id="dailyDesc">Нежный раф с сиропом лаванды и облаком молочной пены.</p>
+                        <span class="daily-price" id="dailyPrice">320 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+                <section id="loyalty" class="section">
+            <div class="container">
+                <h2 class="section-title">Карта гостя</h2>
+
+                <!-- Анкета регистрации -->
+                <div class="loyalty-card" id="loyaltyForm">
+                    <p class="loyalty-text">Зарегистрируйся — и каждый 6-й кофе будет бесплатно!</p>
+
+                    <div class="form-group">
+                        <label for="regName">Имя</label>
+                        <input type="text" id="regName" placeholder="Как тебя зовут?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPhone">Телефон</label>
+                        <input type="tel" id="regPhone" placeholder="+7 (___) ___-__-__">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Email (необязательно)</label>
+                        <input type="email" id="regEmail" placeholder="you@mail.com">
+                    </div>
+
+                    <label class="consent">
+                        <input type="checkbox" id="regConsent">
+                        Согласен на обработку персональных данных
+                    </label>
+
+                    <p class="reg-error" id="regError" hidden>⚠️ Заполни имя, телефон полностью и поставь согласие</p>
+
+                    <button class="button" id="regSubmit">Получить карту</button>
+                </div>
+
+                <!-- Личная карта -->
+                <div class="loyalty-card loyalty-personal" id="loyaltyCard" hidden>
+                    <div class="loyalty-head">
+                        <div>
+                            <p class="loyalty-name" id="cardName">Гость</p>
+                            <p class="loyalty-since" id="cardSince"></p>
+                        </div>
+                        <span class="loyalty-logo">☕ Bean & Brew</span>
+                    </div>
+
+                    <div class="stamps" id="stamps"></div>
+
+                    <p class="loyalty-hint" id="cardHint"></p>
+                    <button class="loyalty-logout" id="loyaltyLogout">Выйти из аккаунта (демо)</button>
+                </div>
+            </div>
+        </section>
+
+                <section id="quiz" class="section">
+            <div class="container">
+                <h2 class="section-title">Подбери свой напиток</h2>
+                <div class="quiz-box">
+                    <div id="quizGame">
+                        <p class="quiz-step" id="quizStep">Вопрос 1 из 5</p>
+                        <h3 class="quiz-q" id="quizQ"></h3>
+                        <div class="quiz-answers" id="quizAnswers"></div>
+                    </div>
+                    <div class="quiz-result" id="quizResult" hidden>
+                        <div class="quiz-emoji" id="quizEmoji">☕</div>
+                        <h3 id="quizName"></h3>
+                        <p id="quizDesc"></p>
+                        <div class="quiz-alt" id="quizAlt" hidden>
+                            <p class="quiz-alt-label">Или попробуй</p>
+                            <p><strong id="quizAltName"></strong> — <span id="quizAltDesc"></span></p>
+                        </div>
+                        <button class="button" id="quizRestart">Пройти ещё раз</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="gallery" class="section">
             <div class="container">
                 <h2 class="section-title">Атмосфера</h2>
